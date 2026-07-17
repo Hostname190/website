@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page">KimKiro - Home</title>
+    
+    <link rel="icon" href="/src/icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/styles.css?v=3.1">
+</head>
+<body class="dark-mode">
+    <audio id="background-music" src="/src/background.mp3" loop></audio>
+
+    <!-- Side Navigation -->
+    <aside class="side-nav" id="sideNavigation" aria-label="Navigasi Utama">
+        <div class="side-nav-logo"><img src="/src/icon.png" alt="Logo" class="logo-img"><span id="sideNavName">KimKiro</span></div>
+        <nav class="side-nav-links" aria-label="Tautan navigasi">
+            <a href="/" class="side-nav-link"><i class="bi bi-window-desktop"></i><span>Home</span></a>
+            <a href="/preset" class="side-nav-link"><i class="bi bi-magic"></i><span>Presets AM</span></a>
+            <a href="/docs" class="side-nav-link"><i class="bi bi-file-earmark-code"></i><span>Docs API</span></a>
+            <a href="/anime" class="side-nav-link"><i class="bi bi-film"></i><span>Anime</span></a>
+            <a href="/komiku" class="side-nav-link"><i class="bi bi-book"></i><span>Komiku</span></a>
+        </nav>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="main-header" role="banner">
+            <button class="menu-toggle" aria-label="Alihkan menu navigasi" aria-expanded="false"><i class="bi bi-list"></i></button>
+            <div class="header-title-container"><h1 class="header-title">Home</h1></div>
+            <div class="header-actions">
+                <div class="theme-switcher">
+                    <i class="bi bi-sun-fill"></i>
+                    <label class="switch" aria-label="Alihkan tema"><input type="checkbox" id="themeToggle" checked><span class="slider round"></span></label>
+                    <i class="bi bi-moon-stars-fill"></i>
+                </div>
+            </div>
+        </header>
+        
+        <main id="mainContent">
+            <section id="hero" class="hero-section">
+                <div class="hero-background"></div>
+                <div class="hero-content">
+                    <button id="mute-btn" class="mute-btn"><i class="bi bi-volume-up-fill"></i></button>
+                    <img src="/src/icon.png" alt="Foto Profil" class="profile-picture">
+                    <h2 id="name" class="gradient-text">LoneCoder - KimKiro</h2>
+                    <p id="description" class="hero-description"></p>
+                    <div class="social-links">
+                        <a href="https://github.com/FlowFalcon" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://wa.me/message/6283895252997" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://youtube.com/@kimkiro" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                    
+                    <!-- Kontainer Tab Geser yang Disederhanakan -->
+                    <div class="info-swiper-container">
+                        <div class="swiper info-swiper">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1: Status Server -->
+                                <div class="swiper-slide">
+                                    <div class="info-pane">
+                                        <div class="pane-title"><i class="bi bi-hdd-stack-fill"></i> Status Server</div>
+                                        <div class="stat-item"><span><i class="bi bi-bar-chart-line-fill"></i> Total Permintaan</span><strong id="total-requests">...</strong></div>
+                                        <div class="stat-item"><span><i class="bi bi-people-fill"></i> Total Pengunjung</span><strong id="total-visitors">...</strong></div>
+                                        <div class="stat-item"><span><i class="bi bi-clock-history"></i> Uptime</span><strong id="server-uptime">...</strong></div>
+                                        <div class="stat-item"><span><i class="bi bi-pc-display"></i> Platform</span><strong id="server-platform">...</strong></div>
+                                        <div class="stat-item"><span><i class="bi bi-cpu-fill"></i> CPU</span><strong id="server-cpu">...</strong></div>
+                                        <div class="stat-item"><span><i class="bi bi-memory"></i> RAM Terpakai</span><strong id="ram-usage">...</strong></div>
+                                    </div>
+                                </div>
+                                <!-- Slide 2: Kalender -->
+                                <div class="swiper-slide">
+                                    <div class="info-pane">
+                                        <div id="calendar-container" class="calendar-container">
+                                            <div class="calendar-header">
+                                                <button id="prev-month"><i class="bi bi-chevron-left"></i></button>
+                                                <h4 id="month-year"></h4>
+                                                <button id="next-month"><i class="bi bi-chevron-right"></i></button>
+                                            </div>
+                                            <div class="calendar-weekdays"><div>Min</div><div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div></div>
+                                            <div id="calendar-grid" class="calendar-grid"></div>
+                                            <div id="holiday-info" class="holiday-info"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="portfolio" class="portfolio-section">
+                                <h3 id="portfolio-title" class="section-title">Proyek Pilihan</h3>
+                
+                <div class="portfolio-grid">
+                    <!-- Portfolio Items -->
+                    <div class="portfolio-card">
+                        <div class="card-image"><img src="https://placehold.co/600x400/1F2937/34D399?text=Proyek+API" alt="Gambar Proyek 1"></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Platform Dokumentasi API</h4>
+                            <p class="card-description">Membangun antarmuka dokumentasi API yang interaktif dan mudah digunakan dengan Node.js dan Bootstrap, memungkinkan developer menjelajahi endpoint dengan mudah.</p>
+                            <div class="card-tags"><span class="tag">Node.js</span><span class="tag">Bootstrap</span><span class="tag">JavaScript</span></div>
+                            <div class="card-footer"><a href="/docs" class="btn-visit"><i class="bi bi-arrow-up-right-square"></i> Lihat Detail</a></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="card-image"><img src="https://placehold.co/600x400/1F2937/FBBF24?text=Game+Center" alt="Gambar Proyek 2"></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Pusat Permainan Web</h4>
+                            <p class="card-description">Merancang dan mengembangkan koleksi permainan berbasis web yang ringan dan adiktif menggunakan HTML5 Canvas dan JavaScript murni.</p>
+                            <div class="card-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+                            <div class="card-footer"><a href="/game" class="btn-visit"><i class="bi bi-arrow-up-right-square"></i> Mainkan Sekarang</a></div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="card-image"><img src="https://placehold.co/600x400/1F2937/F87171?text=Streaming+Anime" alt="Gambar Proyek 3"></div>
+                        <div class="card-content">
+                            <h4 class="card-title">Situs Streaming Anime</h4>
+                            <p class="card-description">Membuat situs streaming anime dengan fitur pencarian, detail, dan pemutar video yang responsif, terintegrasi dengan API eksternal.</p>
+                            <div class="card-tags"><span class="tag">API</span><span class="tag">UI/UX</span><span class="tag">Frontend</span></div>
+                            <div class="card-footer"><a href="/anime" class="btn-visit"><i class="bi bi-arrow-up-right-square"></i> Tonton Anime</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Swiper.js -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/script.js?v=3.2"></script>
+</body>
+</html>
